@@ -6,9 +6,9 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 @SpringBootApplication
 @EnableJpaAuditing
-public class RestAuditApplication {
+public class RestEventsApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RestAuditApplication.class, args);
+		SpringApplication.run(RestEventsApplication.class, args);
 	}
 }

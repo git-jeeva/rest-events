@@ -1,2 +1,2 @@
-# rest-audit
-Sample project for auditing REST services in Spring Boot applications
+# rest-events
+Sample project for generating application events in Spring Boot applications

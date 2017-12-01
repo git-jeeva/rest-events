@@ -14,16 +14,17 @@ public class TaskController {
     @Autowired
     private TaskRepository taskRepository;
 
-    @RestAnnotations.Auditable(action = "Some action performed")
-    @RestAnnotations.LogExecutionTime
+    @Autowired
+    private CustomSpringEventPublisher customSpringEventPublisher;
+
     @GetMapping("tasks")
     public List<Task> getAllTasks() {
         return taskRepository.findAll();
     }
 
-    @RestAnnotations.LogExecutionTime
     @PostMapping("/tasks")
     public Task createTask(@Valid @RequestBody Task task) {
+        customSpringEventPublisher.publishCustomSpringEvent("TASK_CREATED");
         return taskRepository.save(task);
     }
 
